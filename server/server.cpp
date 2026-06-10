@@ -1,8 +1,8 @@
-#include<iostream>
-#include<sys/socket.h>
-#include<netinet/in.h>
-#include<unistd.h>
-
+#include <iostream>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <unistd.h>
+#include <thread>
 #include "logger.h"
 #include "client_manager.h"
 
@@ -63,7 +63,14 @@ int main(){
             continue;
         }
         logMessage("\nClient connected...");
-        handleClient(client_socket);
+
+        //thread the connections to support multiple clients
+        thread client_thread(
+            handleClient,
+            client_socket
+        ); 
+        client_thread.detach();
+        
         logMessage("Client session ended");
     }
 
