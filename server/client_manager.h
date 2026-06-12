@@ -20,4 +20,6 @@ std::string viewMetrics();
 
 Client* findClient(int socket);
 
+void closeAllClients();
+
 void printClientCount();

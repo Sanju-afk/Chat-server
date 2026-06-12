@@ -1,125 +1,1644 @@
-[2026-06-11 00:40:24] Socket created succesfully...
-[2026-06-11 00:40:24] Bind succesful...
-[2026-06-11 00:40:24] Listening on port 8080...
-[2026-06-11 00:40:35] 
-Client connected...
-[2026-06-11 00:40:37] USER JOINED Alice
-[2026-06-11 00:40:41] Message recieved...
-[2026-06-11 00:40:43] Client disconnected
-[2026-06-11 00:40:43] User left: Alice
-[2026-06-11 00:40:52] Shutting down server...
-[2026-06-11 00:40:52] Server shutdown complete
-[2026-06-11 01:25:35] Socket created succesfully...
-[2026-06-11 01:25:35] Bind succesful...
-[2026-06-11 01:25:35] Listening on port 8080...
-[2026-06-11 01:25:38] Shutting down server...
-[2026-06-11 01:25:38] Server shutdown complete
-[2026-06-11 01:25:42] Socket created succesfully...
-[2026-06-11 01:25:42] Bind succesful...
-[2026-06-11 01:25:42] Listening on port 8080...
-[2026-06-11 01:26:02] 
-Client connected...
-[2026-06-11 01:26:04] USER JOINED Alice
-[2026-06-11 01:26:08] Message recieved...
-[2026-06-11 01:26:12] Client disconnected
-[2026-06-11 01:26:12] User left: Alice
-[2026-06-11 01:26:13] Shutting down server...
-[2026-06-11 01:26:13] Server shutdown complete
-[2026-06-11 12:04:46] Socket created succesfully...
-[2026-06-11 12:04:46] Bind succesful...
-[2026-06-11 12:04:46] Listening on port 8080...
-[2026-06-11 12:04:54] 
-Client connected...
-[2026-06-11 12:04:57] Client connected but then disconnected...
+[2026-06-12 14:23:15] Server socket created succesfully...
+[2026-06-12 14:23:15] Bind succesful...
+[2026-06-12 14:23:15] Listening on port 8080...
+[2026-06-12 14:23:17] Client connected FD = 5
 
-[2026-06-11 12:04:59] Shutting down server...
-[2026-06-11 12:04:59] Server shutdown complete
-[2026-06-11 16:44:32] Server socket created succesfully...
-[2026-06-11 16:44:32] Bind succesful...
-[2026-06-11 16:44:32] Listening on port 8080...
-[2026-06-11 16:44:53] Server socket created succesfully...
-[2026-06-11 16:44:53] Bind succesful...
-[2026-06-11 16:44:53] Listening on port 8080...
-[2026-06-11 17:10:24] Server socket created succesfully...
-[2026-06-11 17:10:24] Bind succesful...
-[2026-06-11 17:10:24] Listening on port 8080...
-[2026-06-11 17:14:17] Server socket created succesfully...
-[2026-06-11 17:14:17] Bind succesful...
-[2026-06-11 17:14:17] Listening on port 8080...
-[2026-06-11 17:14:26] Client connected FD = 5
+[2026-06-12 14:24:04] Alice disconnected...
+[2026-06-12 14:24:11] Client connected FD = 5
 
-[2026-06-11 17:18:29] Server socket created succesfully...
-[2026-06-11 17:18:29] Bind succesful...
-[2026-06-11 17:18:29] Listening on port 8080...
-[2026-06-11 17:18:47] Client connected FD = 5
+[2026-06-12 14:24:11] Client connected FD = 6
 
-[2026-06-11 17:28:54] Server socket created succesfully...
-[2026-06-11 17:28:54] Bind succesful...
-[2026-06-11 17:28:54] Listening on port 8080...
-[2026-06-11 17:29:03] Client connected FD = 5
+[2026-06-12 14:24:11] Client connected FD = 7
 
-[2026-06-12 10:00:12] Server socket created succesfully...
-[2026-06-12 10:00:12] Bind succesful...
-[2026-06-12 10:00:12] Listening on port 8080...
-[2026-06-12 10:00:19] Client connected FD = 5
+[2026-06-12 14:24:11] Client connected FD = 8
 
-[2026-06-12 10:00:19] Recieved failed...
-[2026-06-12 10:02:57] Server socket created succesfully...
-[2026-06-12 10:02:57] Bind succesful...
-[2026-06-12 10:02:57] Listening on port 8080...
-[2026-06-12 10:03:01] Client connected FD = 5
+[2026-06-12 14:24:11] Client connected FD = 9
 
-[2026-06-12 10:03:01] Recieved failed...
-[2026-06-12 10:04:09] Server socket created succesfully...
-[2026-06-12 10:04:09] Bind succesful...
-[2026-06-12 10:04:09] Listening on port 8080...
-[2026-06-12 10:04:13] Client connected FD = 5
+[2026-06-12 14:24:11] Client connected FD = 10
 
-[2026-06-12 10:04:13] Recieved failed...
-[2026-06-12 10:35:52] Server socket created succesfully...
-[2026-06-12 10:35:52] Socket binding failed...
-[2026-06-12 10:36:04] Server socket created succesfully...
-[2026-06-12 10:36:04] Socket binding failed...
-[2026-06-12 10:36:33] Server socket created succesfully...
-[2026-06-12 10:36:33] Socket binding failed...
-[2026-06-12 10:38:52] Server socket created succesfully...
-[2026-06-12 10:38:52] Bind succesful...
-[2026-06-12 10:38:52] Listening on port 8080...
-[2026-06-12 10:39:02] Client connected FD = 5
+[2026-06-12 14:24:11] Client connected FD = 11
 
-[2026-06-12 11:29:30] Server socket created succesfully...
-[2026-06-12 11:29:30] Bind succesful...
-[2026-06-12 11:29:30] Listening on port 8080...
-[2026-06-12 11:29:35] Client connected FD = 5
+[2026-06-12 14:24:11] Client connected FD = 12
 
-[2026-06-12 12:02:20] Client disconnected...
-[2026-06-12 12:02:32] Server socket created succesfully...
-[2026-06-12 12:02:32] Bind succesful...
-[2026-06-12 12:02:32] Listening on port 8080...
-[2026-06-12 12:02:35] Client connected FD = 5
+[2026-06-12 14:24:11] Client connected FD = 13
 
-[2026-06-12 12:02:51] Client connected FD = 6
+[2026-06-12 14:24:11] Client connected FD = 14
 
-[2026-06-12 12:04:49] Server socket created succesfully...
-[2026-06-12 12:04:49] Bind succesful...
-[2026-06-12 12:04:49] Listening on port 8080...
-[2026-06-12 12:05:01] Client connected FD = 5
+[2026-06-12 14:24:11] Client connected FD = 15
 
-[2026-06-12 12:05:11] Client connected FD = 6
+[2026-06-12 14:24:11] Client connected FD = 16
 
-[2026-06-12 12:05:42] Bobdisconnected...
-[2026-06-12 12:05:44] Alicedisconnected...
-[2026-06-12 12:39:22] Server socket created succesfully...
-[2026-06-12 12:39:22] Bind succesful...
-[2026-06-12 12:39:22] Listening on port 8080...
-[2026-06-12 12:39:29] Client connected FD = 5
+[2026-06-12 14:24:11] Client connected FD = 17
 
-[2026-06-12 12:39:39] Client connected FD = 6
+[2026-06-12 14:24:11] Client connected FD = 18
 
-[2026-06-12 12:39:50] Client connected FD = 7
+[2026-06-12 14:24:11] Client connected FD = 19
 
-[2026-06-12 12:40:20] Charliedisconnected...
-[2026-06-12 12:40:22] Bobdisconnected...
-[2026-06-12 12:40:23] Alicedisconnected...
-[2026-06-12 12:40:37] Client connected FD = 5
+[2026-06-12 14:24:11] Client connected FD = 20
 
+[2026-06-12 14:24:11] Client connected FD = 21
+
+[2026-06-12 14:24:11] Client connected FD = 22
+
+[2026-06-12 14:24:11] Client connected FD = 23
+
+[2026-06-12 14:24:11] Client connected FD = 24
+
+[2026-06-12 14:24:44] Client connected FD = 25
+
+[2026-06-12 14:24:54] ALice disconnected...
+[2026-06-12 14:24:56] Server shutting down...
+[2026-06-12 14:25:31] Server socket created succesfully...
+[2026-06-12 14:25:31] Socket binding failed...
+[2026-06-12 14:25:35] Server socket created succesfully...
+[2026-06-12 14:25:35] Socket binding failed...
+[2026-06-12 14:25:43] Server socket created succesfully...
+[2026-06-12 14:25:43] Socket binding failed...
+[2026-06-12 14:26:12] Server socket created succesfully...
+[2026-06-12 14:26:12] Bind succesful...
+[2026-06-12 14:26:12] Listening on port 8080...
+[2026-06-12 14:26:16] Client connected FD = 5
+
+[2026-06-12 14:26:16] Client connected FD = 6
+
+[2026-06-12 14:26:16] Client connected FD = 7
+
+[2026-06-12 14:26:16] Client connected FD = 8
+
+[2026-06-12 14:26:16] Client connected FD = 9
+
+[2026-06-12 14:26:16] Client connected FD = 10
+
+[2026-06-12 14:26:16] Client connected FD = 11
+
+[2026-06-12 14:26:16] Client connected FD = 12
+
+[2026-06-12 14:26:16] Client connected FD = 13
+
+[2026-06-12 14:26:16] Client connected FD = 14
+
+[2026-06-12 14:26:16] Client connected FD = 15
+
+[2026-06-12 14:26:16] Client connected FD = 16
+
+[2026-06-12 14:26:16] Client connected FD = 17
+
+[2026-06-12 14:26:16] Client connected FD = 18
+
+[2026-06-12 14:26:16] Client connected FD = 19
+
+[2026-06-12 14:26:16] Client connected FD = 20
+
+[2026-06-12 14:26:16] Client connected FD = 21
+
+[2026-06-12 14:26:16] Client connected FD = 22
+
+[2026-06-12 14:26:16] Client connected FD = 23
+
+[2026-06-12 14:26:16] Client connected FD = 24
+
+[2026-06-12 14:26:16] Client connected FD = 25
+
+[2026-06-12 14:26:16] Client connected FD = 26
+
+[2026-06-12 14:26:16] Client connected FD = 27
+
+[2026-06-12 14:26:16] Client connected FD = 28
+
+[2026-06-12 14:26:16] Client connected FD = 29
+
+[2026-06-12 14:26:16] Client connected FD = 30
+
+[2026-06-12 14:26:16] Client connected FD = 31
+
+[2026-06-12 14:26:16] Client connected FD = 32
+
+[2026-06-12 14:26:16] Client connected FD = 33
+
+[2026-06-12 14:26:16] Client connected FD = 34
+
+[2026-06-12 14:26:16] Client connected FD = 35
+
+[2026-06-12 14:26:16] Client connected FD = 36
+
+[2026-06-12 14:26:16] Client connected FD = 37
+
+[2026-06-12 14:26:16] Client connected FD = 38
+
+[2026-06-12 14:26:16] Client connected FD = 39
+
+[2026-06-12 14:26:16] Client connected FD = 40
+
+[2026-06-12 14:26:16] Client connected FD = 41
+
+[2026-06-12 14:26:16] Client connected FD = 42
+
+[2026-06-12 14:26:16] Client connected FD = 43
+
+[2026-06-12 14:26:16] Client connected FD = 44
+
+[2026-06-12 14:26:16] Client connected FD = 45
+
+[2026-06-12 14:26:16] Client connected FD = 46
+
+[2026-06-12 14:26:16] Client connected FD = 47
+
+[2026-06-12 14:26:16] Client connected FD = 48
+
+[2026-06-12 14:26:16] Client connected FD = 49
+
+[2026-06-12 14:26:16] Client connected FD = 50
+
+[2026-06-12 14:26:16] Client connected FD = 51
+
+[2026-06-12 14:26:16] Client connected FD = 52
+
+[2026-06-12 14:26:16] Client connected FD = 53
+
+[2026-06-12 14:26:16] Client connected FD = 54
+
+[2026-06-12 14:29:42] Server shutting down...
+[2026-06-12 14:29:44] Server socket created succesfully...
+[2026-06-12 14:29:44] Socket binding failed...
+[2026-06-12 14:29:52] Server socket created succesfully...
+[2026-06-12 14:29:52] Socket binding failed...
+[2026-06-12 14:30:00] Server socket created succesfully...
+[2026-06-12 14:30:00] Socket binding failed...
+[2026-06-12 14:30:26] Server socket created succesfully...
+[2026-06-12 14:30:26] Socket binding failed...
+[2026-06-12 14:30:44] Server socket created succesfully...
+[2026-06-12 14:30:44] Socket binding failed...
+[2026-06-12 14:30:52] Server socket created succesfully...
+[2026-06-12 14:30:52] Bind succesful...
+[2026-06-12 14:30:52] Listening on port 8080...
+[2026-06-12 14:31:22] Client connected FD = 5
+
+[2026-06-12 14:31:22] Client connected FD = 6
+
+[2026-06-12 14:31:22] Client connected FD = 7
+
+[2026-06-12 14:31:22] Client connected FD = 8
+
+[2026-06-12 14:31:22] Client connected FD = 9
+
+[2026-06-12 14:31:22] Client connected FD = 10
+
+[2026-06-12 14:31:22] Client connected FD = 11
+
+[2026-06-12 14:31:22] Client connected FD = 12
+
+[2026-06-12 14:31:22] Client connected FD = 13
+
+[2026-06-12 14:31:22] Client connected FD = 14
+
+[2026-06-12 14:31:22] Client connected FD = 15
+
+[2026-06-12 14:31:22] Client connected FD = 16
+
+[2026-06-12 14:31:22] Client connected FD = 17
+
+[2026-06-12 14:31:22] Client connected FD = 18
+
+[2026-06-12 14:31:22] Client connected FD = 19
+
+[2026-06-12 14:31:22] Client connected FD = 20
+
+[2026-06-12 14:31:22] Client connected FD = 21
+
+[2026-06-12 14:31:22] Client connected FD = 22
+
+[2026-06-12 14:31:22] Client connected FD = 23
+
+[2026-06-12 14:31:22] Client connected FD = 24
+
+[2026-06-12 14:31:22] Client connected FD = 25
+
+[2026-06-12 14:31:22] Client connected FD = 26
+
+[2026-06-12 14:31:22] Client connected FD = 27
+
+[2026-06-12 14:31:22] Client connected FD = 28
+
+[2026-06-12 14:31:22] Client connected FD = 29
+
+[2026-06-12 14:31:22] Client connected FD = 30
+
+[2026-06-12 14:31:22] Client connected FD = 31
+
+[2026-06-12 14:31:22] Client connected FD = 32
+
+[2026-06-12 14:31:22] Client connected FD = 33
+
+[2026-06-12 14:31:22] Client connected FD = 34
+
+[2026-06-12 14:31:22] Client connected FD = 35
+
+[2026-06-12 14:31:22] Client connected FD = 36
+
+[2026-06-12 14:31:22] Client connected FD = 37
+
+[2026-06-12 14:31:22] Client connected FD = 38
+
+[2026-06-12 14:31:22] Client connected FD = 39
+
+[2026-06-12 14:31:22] Client connected FD = 40
+
+[2026-06-12 14:31:22] Client connected FD = 41
+
+[2026-06-12 14:31:22] Client connected FD = 42
+
+[2026-06-12 14:31:22] Client connected FD = 43
+
+[2026-06-12 14:31:22] Client connected FD = 44
+
+[2026-06-12 14:31:22] Client connected FD = 45
+
+[2026-06-12 14:31:22] Client connected FD = 46
+
+[2026-06-12 14:31:22] Client connected FD = 47
+
+[2026-06-12 14:31:22] Client connected FD = 48
+
+[2026-06-12 14:31:22] Client connected FD = 49
+
+[2026-06-12 14:31:22] Client connected FD = 50
+
+[2026-06-12 14:31:22] Client connected FD = 51
+
+[2026-06-12 14:31:22] Client connected FD = 52
+
+[2026-06-12 14:31:22] Client connected FD = 53
+
+[2026-06-12 14:31:22] Client connected FD = 54
+
+[2026-06-12 14:31:22] Client connected FD = 55
+
+[2026-06-12 14:31:22] Client connected FD = 56
+
+[2026-06-12 14:31:22] Client connected FD = 57
+
+[2026-06-12 14:31:22] Client connected FD = 58
+
+[2026-06-12 14:31:22] Client connected FD = 59
+
+[2026-06-12 14:31:22] Client connected FD = 60
+
+[2026-06-12 14:31:22] Client connected FD = 61
+
+[2026-06-12 14:31:22] Client connected FD = 62
+
+[2026-06-12 14:31:22] Client connected FD = 63
+
+[2026-06-12 14:31:22] Client connected FD = 64
+
+[2026-06-12 14:31:22] Client connected FD = 65
+
+[2026-06-12 14:31:22] Client connected FD = 66
+
+[2026-06-12 14:31:22] Client connected FD = 67
+
+[2026-06-12 14:31:22] Client connected FD = 68
+
+[2026-06-12 14:31:22] Client connected FD = 69
+
+[2026-06-12 14:31:22] Client connected FD = 70
+
+[2026-06-12 14:31:22] Client connected FD = 71
+
+[2026-06-12 14:31:22] Client connected FD = 72
+
+[2026-06-12 14:31:22] Client connected FD = 73
+
+[2026-06-12 14:31:22] Client connected FD = 74
+
+[2026-06-12 14:31:22] Client connected FD = 75
+
+[2026-06-12 14:31:22] Client connected FD = 76
+
+[2026-06-12 14:31:22] Client connected FD = 77
+
+[2026-06-12 14:31:22] Client connected FD = 78
+
+[2026-06-12 14:31:22] Client connected FD = 79
+
+[2026-06-12 14:31:22] Client connected FD = 80
+
+[2026-06-12 14:31:22] Client connected FD = 81
+
+[2026-06-12 14:31:22] Client connected FD = 82
+
+[2026-06-12 14:31:22] Client connected FD = 83
+
+[2026-06-12 14:31:22] Client connected FD = 84
+
+[2026-06-12 14:31:22] Client connected FD = 85
+
+[2026-06-12 14:31:22] Client connected FD = 86
+
+[2026-06-12 14:31:22] Client connected FD = 87
+
+[2026-06-12 14:31:22] Client connected FD = 88
+
+[2026-06-12 14:31:22] Client connected FD = 89
+
+[2026-06-12 14:31:22] Client connected FD = 90
+
+[2026-06-12 14:31:22] Client connected FD = 91
+
+[2026-06-12 14:31:22] Client connected FD = 92
+
+[2026-06-12 14:31:22] Client connected FD = 93
+
+[2026-06-12 14:31:22] Client connected FD = 94
+
+[2026-06-12 14:31:22] Client connected FD = 95
+
+[2026-06-12 14:31:22] Client connected FD = 96
+
+[2026-06-12 14:31:22] Client connected FD = 97
+
+[2026-06-12 14:31:22] Client connected FD = 98
+
+[2026-06-12 14:31:22] Client connected FD = 99
+
+[2026-06-12 14:31:22] Client connected FD = 100
+
+[2026-06-12 14:31:22] Client connected FD = 101
+
+[2026-06-12 14:31:22] Client connected FD = 102
+
+[2026-06-12 14:31:22] Client connected FD = 103
+
+[2026-06-12 14:31:22] Client connected FD = 104
+
+[2026-06-12 14:31:22] Client connected FD = 105
+
+[2026-06-12 14:31:22] Client connected FD = 106
+
+[2026-06-12 14:31:22] Client connected FD = 107
+
+[2026-06-12 14:31:22] Client connected FD = 108
+
+[2026-06-12 14:31:22] Client connected FD = 109
+
+[2026-06-12 14:31:22] Client connected FD = 110
+
+[2026-06-12 14:31:22] Client connected FD = 111
+
+[2026-06-12 14:31:22] Client connected FD = 112
+
+[2026-06-12 14:31:22] Client connected FD = 113
+
+[2026-06-12 14:31:22] Client connected FD = 114
+
+[2026-06-12 14:31:22] Client connected FD = 115
+
+[2026-06-12 14:31:22] Client connected FD = 116
+
+[2026-06-12 14:31:22] Client connected FD = 117
+
+[2026-06-12 14:31:22] Client connected FD = 118
+
+[2026-06-12 14:31:22] Client connected FD = 119
+
+[2026-06-12 14:31:22] Client connected FD = 120
+
+[2026-06-12 14:31:22] Client connected FD = 121
+
+[2026-06-12 14:31:22] Client connected FD = 122
+
+[2026-06-12 14:31:22] Client connected FD = 123
+
+[2026-06-12 14:31:22] Client connected FD = 124
+
+[2026-06-12 14:31:22] Client connected FD = 125
+
+[2026-06-12 14:31:22] Client connected FD = 126
+
+[2026-06-12 14:31:22] Client connected FD = 127
+
+[2026-06-12 14:31:22] Client connected FD = 128
+
+[2026-06-12 14:31:22] Client connected FD = 129
+
+[2026-06-12 14:31:22] Client connected FD = 130
+
+[2026-06-12 14:31:22] Client connected FD = 131
+
+[2026-06-12 14:31:22] Client connected FD = 132
+
+[2026-06-12 14:31:22] Client connected FD = 133
+
+[2026-06-12 14:31:22] Client connected FD = 134
+
+[2026-06-12 14:31:22] Client connected FD = 135
+
+[2026-06-12 14:31:22] Client connected FD = 136
+
+[2026-06-12 14:31:22] Client connected FD = 137
+
+[2026-06-12 14:31:22] Client connected FD = 138
+
+[2026-06-12 14:31:22] Client connected FD = 139
+
+[2026-06-12 14:31:22] Client connected FD = 140
+
+[2026-06-12 14:31:22] Client connected FD = 141
+
+[2026-06-12 14:31:22] Client connected FD = 142
+
+[2026-06-12 14:31:22] Client connected FD = 143
+
+[2026-06-12 14:31:22] Client connected FD = 144
+
+[2026-06-12 14:31:22] Client connected FD = 145
+
+[2026-06-12 14:31:22] Client connected FD = 146
+
+[2026-06-12 14:31:22] Client connected FD = 147
+
+[2026-06-12 14:31:22] Client connected FD = 148
+
+[2026-06-12 14:31:22] Client connected FD = 149
+
+[2026-06-12 14:31:22] Client connected FD = 150
+
+[2026-06-12 14:31:22] Client connected FD = 151
+
+[2026-06-12 14:31:22] Client connected FD = 152
+
+[2026-06-12 14:31:22] Client connected FD = 153
+
+[2026-06-12 14:31:22] Client connected FD = 154
+
+[2026-06-12 14:31:22] Client connected FD = 155
+
+[2026-06-12 14:31:22] Client connected FD = 156
+
+[2026-06-12 14:31:22] Client connected FD = 157
+
+[2026-06-12 14:31:22] Client connected FD = 158
+
+[2026-06-12 14:31:22] Client connected FD = 159
+
+[2026-06-12 14:31:22] Client connected FD = 160
+
+[2026-06-12 14:31:22] Client connected FD = 161
+
+[2026-06-12 14:31:22] Client connected FD = 162
+
+[2026-06-12 14:31:22] Client connected FD = 163
+
+[2026-06-12 14:31:22] Client connected FD = 164
+
+[2026-06-12 14:31:22] Client connected FD = 165
+
+[2026-06-12 14:31:22] Client connected FD = 166
+
+[2026-06-12 14:31:22] Client connected FD = 167
+
+[2026-06-12 14:31:22] Client connected FD = 168
+
+[2026-06-12 14:31:22] Client connected FD = 169
+
+[2026-06-12 14:31:22] Client connected FD = 170
+
+[2026-06-12 14:31:22] Client connected FD = 171
+
+[2026-06-12 14:31:22] Client connected FD = 172
+
+[2026-06-12 14:31:22] Client connected FD = 173
+
+[2026-06-12 14:31:22] Client connected FD = 174
+
+[2026-06-12 14:31:22] Client connected FD = 175
+
+[2026-06-12 14:31:22] Client connected FD = 176
+
+[2026-06-12 14:31:22] Client connected FD = 177
+
+[2026-06-12 14:31:22] Client connected FD = 178
+
+[2026-06-12 14:31:22] Client connected FD = 179
+
+[2026-06-12 14:31:22] Client connected FD = 180
+
+[2026-06-12 14:31:22] Client connected FD = 181
+
+[2026-06-12 14:31:22] Client connected FD = 182
+
+[2026-06-12 14:31:22] Client connected FD = 183
+
+[2026-06-12 14:31:22] Client connected FD = 184
+
+[2026-06-12 14:31:22] Client connected FD = 185
+
+[2026-06-12 14:31:22] Client connected FD = 186
+
+[2026-06-12 14:31:22] Client connected FD = 187
+
+[2026-06-12 14:31:22] Client connected FD = 188
+
+[2026-06-12 14:31:22] Client connected FD = 189
+
+[2026-06-12 14:31:22] Client connected FD = 190
+
+[2026-06-12 14:31:22] Client connected FD = 191
+
+[2026-06-12 14:31:22] Client connected FD = 192
+
+[2026-06-12 14:31:22] Client connected FD = 193
+
+[2026-06-12 14:31:22] Client connected FD = 194
+
+[2026-06-12 14:31:22] Client connected FD = 195
+
+[2026-06-12 14:31:22] Client connected FD = 196
+
+[2026-06-12 14:31:22] Client connected FD = 197
+
+[2026-06-12 14:31:22] Client connected FD = 198
+
+[2026-06-12 14:31:22] Client connected FD = 199
+
+[2026-06-12 14:31:22] Client connected FD = 200
+
+[2026-06-12 14:31:22] Client connected FD = 201
+
+[2026-06-12 14:31:22] Client connected FD = 202
+
+[2026-06-12 14:31:22] Client connected FD = 203
+
+[2026-06-12 14:31:22] Client connected FD = 204
+
+[2026-06-12 14:33:30] Client connected FD = 205
+
+[2026-06-12 14:33:52] user 201 disconnected...
+[2026-06-12 14:34:01] Server shutting down...
+[2026-06-12 14:36:47] Server socket created succesfully...
+[2026-06-12 14:36:47] Bind succesful...
+[2026-06-12 14:36:47] Listening on port 8080...
+[2026-06-12 14:37:19] Client connected FD = 5
+
+[2026-06-12 14:37:29] Alice disconnected...
+[2026-06-12 14:37:33] Server shutting down...
+[2026-06-12 14:39:18] Server socket created succesfully...
+[2026-06-12 14:39:18] Bind succesful...
+[2026-06-12 14:39:18] Listening on port 8080...
+[2026-06-12 14:39:33] Client connected FD = 5
+
+[2026-06-12 14:39:33] Client connected FD = 6
+
+[2026-06-12 14:39:33] Client connected FD = 7
+
+[2026-06-12 14:39:33] Client connected FD = 8
+
+[2026-06-12 14:39:33] Client connected FD = 9
+
+[2026-06-12 14:39:33] Client connected FD = 10
+
+[2026-06-12 14:39:33] Client connected FD = 11
+
+[2026-06-12 14:39:33] Client connected FD = 12
+
+[2026-06-12 14:39:33] Client connected FD = 13
+
+[2026-06-12 14:39:33] Client connected FD = 14
+
+[2026-06-12 14:39:33] Client connected FD = 15
+
+[2026-06-12 14:39:33] Client connected FD = 16
+
+[2026-06-12 14:39:33] Client connected FD = 17
+
+[2026-06-12 14:39:33] Client connected FD = 18
+
+[2026-06-12 14:39:33] Client connected FD = 19
+
+[2026-06-12 14:39:33] Client connected FD = 20
+
+[2026-06-12 14:39:33] Client connected FD = 21
+
+[2026-06-12 14:39:33] Client connected FD = 22
+
+[2026-06-12 14:39:33] Client connected FD = 23
+
+[2026-06-12 14:39:33] Client connected FD = 24
+
+[2026-06-12 14:39:33] Client connected FD = 25
+
+[2026-06-12 14:39:33] Client connected FD = 26
+
+[2026-06-12 14:39:33] Client connected FD = 27
+
+[2026-06-12 14:39:33] Client connected FD = 28
+
+[2026-06-12 14:39:33] Client connected FD = 29
+
+[2026-06-12 14:39:33] Client connected FD = 30
+
+[2026-06-12 14:39:33] Client connected FD = 31
+
+[2026-06-12 14:39:33] Client connected FD = 32
+
+[2026-06-12 14:39:33] Client connected FD = 33
+
+[2026-06-12 14:39:33] Client connected FD = 34
+
+[2026-06-12 14:39:33] Client connected FD = 35
+
+[2026-06-12 14:39:33] Client connected FD = 36
+
+[2026-06-12 14:39:33] Client connected FD = 37
+
+[2026-06-12 14:39:33] Client connected FD = 38
+
+[2026-06-12 14:39:33] Client connected FD = 39
+
+[2026-06-12 14:39:33] Client connected FD = 40
+
+[2026-06-12 14:39:33] Client connected FD = 41
+
+[2026-06-12 14:39:33] Client connected FD = 42
+
+[2026-06-12 14:39:33] Client connected FD = 43
+
+[2026-06-12 14:39:33] Client connected FD = 44
+
+[2026-06-12 14:39:33] Client connected FD = 45
+
+[2026-06-12 14:39:33] Client connected FD = 46
+
+[2026-06-12 14:39:33] Client connected FD = 47
+
+[2026-06-12 14:39:33] Client connected FD = 48
+
+[2026-06-12 14:39:33] Client connected FD = 49
+
+[2026-06-12 14:39:33] Client connected FD = 50
+
+[2026-06-12 14:39:33] Client connected FD = 51
+
+[2026-06-12 14:39:33] Client connected FD = 52
+
+[2026-06-12 14:39:33] Client connected FD = 53
+
+[2026-06-12 14:39:33] Client connected FD = 54
+
+[2026-06-12 14:39:33] Client connected FD = 55
+
+[2026-06-12 14:39:33] Client connected FD = 56
+
+[2026-06-12 14:39:33] Client connected FD = 57
+
+[2026-06-12 14:39:33] Client connected FD = 58
+
+[2026-06-12 14:39:33] Client connected FD = 59
+
+[2026-06-12 14:39:33] Client connected FD = 60
+
+[2026-06-12 14:39:33] Client connected FD = 61
+
+[2026-06-12 14:39:33] Client connected FD = 62
+
+[2026-06-12 14:39:33] Client connected FD = 63
+
+[2026-06-12 14:39:33] Client connected FD = 64
+
+[2026-06-12 14:39:33] Client connected FD = 65
+
+[2026-06-12 14:39:33] Client connected FD = 66
+
+[2026-06-12 14:39:33] Client connected FD = 67
+
+[2026-06-12 14:39:33] Client connected FD = 68
+
+[2026-06-12 14:39:33] Client connected FD = 69
+
+[2026-06-12 14:39:33] Client connected FD = 70
+
+[2026-06-12 14:39:33] Client connected FD = 71
+
+[2026-06-12 14:39:33] Client connected FD = 72
+
+[2026-06-12 14:39:33] Client connected FD = 73
+
+[2026-06-12 14:39:33] Client connected FD = 74
+
+[2026-06-12 14:39:33] Client connected FD = 75
+
+[2026-06-12 14:39:33] Client connected FD = 76
+
+[2026-06-12 14:39:33] Client connected FD = 77
+
+[2026-06-12 14:39:33] Client connected FD = 78
+
+[2026-06-12 14:39:33] Client connected FD = 79
+
+[2026-06-12 14:39:33] Client connected FD = 80
+
+[2026-06-12 14:39:33] Client connected FD = 81
+
+[2026-06-12 14:39:33] Client connected FD = 82
+
+[2026-06-12 14:39:33] Client connected FD = 83
+
+[2026-06-12 14:39:33] Client connected FD = 84
+
+[2026-06-12 14:39:33] Client connected FD = 85
+
+[2026-06-12 14:39:33] Client connected FD = 86
+
+[2026-06-12 14:39:33] Client connected FD = 87
+
+[2026-06-12 14:39:33] Client connected FD = 88
+
+[2026-06-12 14:39:33] Client connected FD = 89
+
+[2026-06-12 14:39:33] Client connected FD = 90
+
+[2026-06-12 14:39:33] Client connected FD = 91
+
+[2026-06-12 14:39:33] Client connected FD = 92
+
+[2026-06-12 14:39:33] Client connected FD = 93
+
+[2026-06-12 14:39:33] Client connected FD = 94
+
+[2026-06-12 14:39:33] Client connected FD = 95
+
+[2026-06-12 14:39:33] Client connected FD = 96
+
+[2026-06-12 14:39:33] Client connected FD = 97
+
+[2026-06-12 14:39:33] Client connected FD = 98
+
+[2026-06-12 14:39:33] Client connected FD = 99
+
+[2026-06-12 14:39:33] Client connected FD = 100
+
+[2026-06-12 14:39:33] Client connected FD = 101
+
+[2026-06-12 14:39:33] Client connected FD = 102
+
+[2026-06-12 14:39:33] Client connected FD = 103
+
+[2026-06-12 14:39:33] Client connected FD = 104
+
+[2026-06-12 14:39:33] Client connected FD = 105
+
+[2026-06-12 14:39:33] Client connected FD = 106
+
+[2026-06-12 14:39:33] Client connected FD = 107
+
+[2026-06-12 14:39:33] Client connected FD = 108
+
+[2026-06-12 14:39:33] Client connected FD = 109
+
+[2026-06-12 14:39:33] Client connected FD = 110
+
+[2026-06-12 14:39:33] Client connected FD = 111
+
+[2026-06-12 14:39:33] Client connected FD = 112
+
+[2026-06-12 14:39:33] Client connected FD = 113
+
+[2026-06-12 14:39:33] Client connected FD = 114
+
+[2026-06-12 14:39:33] Client connected FD = 115
+
+[2026-06-12 14:39:33] Client connected FD = 116
+
+[2026-06-12 14:39:33] Client connected FD = 117
+
+[2026-06-12 14:39:33] Client connected FD = 118
+
+[2026-06-12 14:39:33] Client connected FD = 119
+
+[2026-06-12 14:39:33] Client connected FD = 120
+
+[2026-06-12 14:39:33] Client connected FD = 121
+
+[2026-06-12 14:39:33] Client connected FD = 122
+
+[2026-06-12 14:39:33] Client connected FD = 123
+
+[2026-06-12 14:39:33] Client connected FD = 124
+
+[2026-06-12 14:39:33] Client connected FD = 125
+
+[2026-06-12 14:39:33] Client connected FD = 126
+
+[2026-06-12 14:39:33] Client connected FD = 127
+
+[2026-06-12 14:39:33] Client connected FD = 128
+
+[2026-06-12 14:39:33] Client connected FD = 129
+
+[2026-06-12 14:39:33] Client connected FD = 130
+
+[2026-06-12 14:39:33] Client connected FD = 131
+
+[2026-06-12 14:39:33] Client connected FD = 132
+
+[2026-06-12 14:39:33] Client connected FD = 133
+
+[2026-06-12 14:39:33] Client connected FD = 134
+
+[2026-06-12 14:39:33] Client connected FD = 135
+
+[2026-06-12 14:39:33] Client connected FD = 136
+
+[2026-06-12 14:39:33] Client connected FD = 137
+
+[2026-06-12 14:39:33] Client connected FD = 138
+
+[2026-06-12 14:39:33] Client connected FD = 139
+
+[2026-06-12 14:39:33] Client connected FD = 140
+
+[2026-06-12 14:39:33] Client connected FD = 141
+
+[2026-06-12 14:39:33] Client connected FD = 142
+
+[2026-06-12 14:39:33] Client connected FD = 143
+
+[2026-06-12 14:39:33] Client connected FD = 144
+
+[2026-06-12 14:39:33] Client connected FD = 145
+
+[2026-06-12 14:39:33] Client connected FD = 146
+
+[2026-06-12 14:39:33] Client connected FD = 147
+
+[2026-06-12 14:39:33] Client connected FD = 148
+
+[2026-06-12 14:39:33] Client connected FD = 149
+
+[2026-06-12 14:39:33] Client connected FD = 150
+
+[2026-06-12 14:39:33] Client connected FD = 151
+
+[2026-06-12 14:39:33] Client connected FD = 152
+
+[2026-06-12 14:39:33] Client connected FD = 153
+
+[2026-06-12 14:39:33] Client connected FD = 154
+
+[2026-06-12 14:39:33] Client connected FD = 155
+
+[2026-06-12 14:39:33] Client connected FD = 156
+
+[2026-06-12 14:39:33] Client connected FD = 157
+
+[2026-06-12 14:39:33] Client connected FD = 158
+
+[2026-06-12 14:39:33] Client connected FD = 159
+
+[2026-06-12 14:39:33] Client connected FD = 160
+
+[2026-06-12 14:39:33] Client connected FD = 161
+
+[2026-06-12 14:39:33] Client connected FD = 162
+
+[2026-06-12 14:39:33] Client connected FD = 163
+
+[2026-06-12 14:39:33] Client connected FD = 164
+
+[2026-06-12 14:39:33] Client connected FD = 165
+
+[2026-06-12 14:39:33] Client connected FD = 166
+
+[2026-06-12 14:39:33] Client connected FD = 167
+
+[2026-06-12 14:39:33] Client connected FD = 168
+
+[2026-06-12 14:39:33] Client connected FD = 169
+
+[2026-06-12 14:39:33] Client connected FD = 170
+
+[2026-06-12 14:39:33] Client connected FD = 171
+
+[2026-06-12 14:39:33] Client connected FD = 172
+
+[2026-06-12 14:39:33] Client connected FD = 173
+
+[2026-06-12 14:39:33] Client connected FD = 174
+
+[2026-06-12 14:39:33] Client connected FD = 175
+
+[2026-06-12 14:39:33] Client connected FD = 176
+
+[2026-06-12 14:39:33] Client connected FD = 177
+
+[2026-06-12 14:39:33] Client connected FD = 178
+
+[2026-06-12 14:39:33] Client connected FD = 179
+
+[2026-06-12 14:39:33] Client connected FD = 180
+
+[2026-06-12 14:39:33] Client connected FD = 181
+
+[2026-06-12 14:39:33] Client connected FD = 182
+
+[2026-06-12 14:39:33] Client connected FD = 183
+
+[2026-06-12 14:39:33] Client connected FD = 184
+
+[2026-06-12 14:39:33] Client connected FD = 185
+
+[2026-06-12 14:39:33] Client connected FD = 186
+
+[2026-06-12 14:39:33] Client connected FD = 187
+
+[2026-06-12 14:39:33] Client connected FD = 188
+
+[2026-06-12 14:39:33] Client connected FD = 189
+
+[2026-06-12 14:39:33] Client connected FD = 190
+
+[2026-06-12 14:39:33] Client connected FD = 191
+
+[2026-06-12 14:39:33] Client connected FD = 192
+
+[2026-06-12 14:39:33] Client connected FD = 193
+
+[2026-06-12 14:39:34] Client connected FD = 194
+
+[2026-06-12 14:39:34] Client connected FD = 195
+
+[2026-06-12 14:39:34] Client connected FD = 196
+
+[2026-06-12 14:39:34] Client connected FD = 197
+
+[2026-06-12 14:39:34] Client connected FD = 198
+
+[2026-06-12 14:39:34] Client connected FD = 199
+
+[2026-06-12 14:39:34] Client connected FD = 200
+
+[2026-06-12 14:39:34] Client connected FD = 201
+
+[2026-06-12 14:39:34] Client connected FD = 202
+
+[2026-06-12 14:39:34] Client connected FD = 203
+
+[2026-06-12 14:39:34] Client connected FD = 204
+
+[2026-06-12 14:39:39] Server shutting down...
+[2026-06-12 14:42:19] Server socket created succesfully...
+[2026-06-12 14:42:19] Bind succesful...
+[2026-06-12 14:42:19] Listening on port 8080...
+[2026-06-12 14:42:22] Client connected FD = 5
+
+[2026-06-12 14:42:22] Client connected FD = 6
+
+[2026-06-12 14:42:22] Client connected FD = 7
+
+[2026-06-12 14:42:22] Client connected FD = 8
+
+[2026-06-12 14:42:22] Client connected FD = 9
+
+[2026-06-12 14:42:22] Client connected FD = 10
+
+[2026-06-12 14:42:22] Client connected FD = 11
+
+[2026-06-12 14:42:22] Client connected FD = 12
+
+[2026-06-12 14:42:22] Client connected FD = 13
+
+[2026-06-12 14:42:22] Client connected FD = 14
+
+[2026-06-12 14:42:22] Client connected FD = 15
+
+[2026-06-12 14:42:22] Client connected FD = 16
+
+[2026-06-12 14:42:22] Client connected FD = 17
+
+[2026-06-12 14:42:22] Client connected FD = 18
+
+[2026-06-12 14:42:22] Client connected FD = 19
+
+[2026-06-12 14:42:22] Client connected FD = 20
+
+[2026-06-12 14:42:22] Client connected FD = 21
+
+[2026-06-12 14:42:22] Client connected FD = 22
+
+[2026-06-12 14:42:22] Client connected FD = 23
+
+[2026-06-12 14:42:22] Client connected FD = 24
+
+[2026-06-12 14:42:22] Client connected FD = 25
+
+[2026-06-12 14:42:22] Client connected FD = 26
+
+[2026-06-12 14:42:22] Client connected FD = 27
+
+[2026-06-12 14:42:22] Client connected FD = 28
+
+[2026-06-12 14:42:22] Client connected FD = 29
+
+[2026-06-12 14:42:22] Client connected FD = 30
+
+[2026-06-12 14:42:22] Client connected FD = 31
+
+[2026-06-12 14:42:22] Client connected FD = 32
+
+[2026-06-12 14:42:22] Client connected FD = 33
+
+[2026-06-12 14:42:22] Client connected FD = 34
+
+[2026-06-12 14:42:22] Client connected FD = 35
+
+[2026-06-12 14:42:22] Client connected FD = 36
+
+[2026-06-12 14:42:22] Client connected FD = 37
+
+[2026-06-12 14:42:22] Client connected FD = 38
+
+[2026-06-12 14:42:22] Client connected FD = 39
+
+[2026-06-12 14:42:22] Client connected FD = 40
+
+[2026-06-12 14:42:22] Client connected FD = 41
+
+[2026-06-12 14:42:22] Client connected FD = 42
+
+[2026-06-12 14:42:22] Client connected FD = 43
+
+[2026-06-12 14:42:22] Client connected FD = 44
+
+[2026-06-12 14:42:22] Client connected FD = 45
+
+[2026-06-12 14:42:22] Client connected FD = 46
+
+[2026-06-12 14:42:22] Client connected FD = 47
+
+[2026-06-12 14:42:22] Client connected FD = 48
+
+[2026-06-12 14:42:22] Client connected FD = 49
+
+[2026-06-12 14:42:22] Client connected FD = 50
+
+[2026-06-12 14:42:22] Client connected FD = 51
+
+[2026-06-12 14:42:22] Client connected FD = 52
+
+[2026-06-12 14:42:22] Client connected FD = 53
+
+[2026-06-12 14:42:22] Client connected FD = 54
+
+[2026-06-12 14:42:22] Client connected FD = 55
+
+[2026-06-12 14:42:22] Client connected FD = 56
+
+[2026-06-12 14:42:22] Client connected FD = 57
+
+[2026-06-12 14:42:22] Client connected FD = 58
+
+[2026-06-12 14:42:22] Client connected FD = 59
+
+[2026-06-12 14:42:22] Client connected FD = 60
+
+[2026-06-12 14:42:22] Client connected FD = 61
+
+[2026-06-12 14:42:22] Client connected FD = 62
+
+[2026-06-12 14:42:22] Client connected FD = 63
+
+[2026-06-12 14:42:22] Client connected FD = 64
+
+[2026-06-12 14:42:22] Client connected FD = 65
+
+[2026-06-12 14:42:22] Client connected FD = 66
+
+[2026-06-12 14:42:22] Client connected FD = 67
+
+[2026-06-12 14:42:22] Client connected FD = 68
+
+[2026-06-12 14:42:22] Client connected FD = 69
+
+[2026-06-12 14:42:22] Client connected FD = 70
+
+[2026-06-12 14:42:22] Client connected FD = 71
+
+[2026-06-12 14:42:22] Client connected FD = 72
+
+[2026-06-12 14:42:22] Client connected FD = 73
+
+[2026-06-12 14:42:22] Client connected FD = 74
+
+[2026-06-12 14:42:22] Client connected FD = 75
+
+[2026-06-12 14:42:22] Client connected FD = 76
+
+[2026-06-12 14:42:22] Client connected FD = 77
+
+[2026-06-12 14:42:22] Client connected FD = 78
+
+[2026-06-12 14:42:22] Client connected FD = 79
+
+[2026-06-12 14:42:22] Client connected FD = 80
+
+[2026-06-12 14:42:22] Client connected FD = 81
+
+[2026-06-12 14:42:22] Client connected FD = 82
+
+[2026-06-12 14:42:22] Client connected FD = 83
+
+[2026-06-12 14:42:22] Client connected FD = 84
+
+[2026-06-12 14:42:22] Client connected FD = 85
+
+[2026-06-12 14:42:22] Client connected FD = 86
+
+[2026-06-12 14:42:22] Client connected FD = 87
+
+[2026-06-12 14:42:22] Client connected FD = 88
+
+[2026-06-12 14:42:22] Client connected FD = 89
+
+[2026-06-12 14:42:22] Client connected FD = 90
+
+[2026-06-12 14:42:22] Client connected FD = 91
+
+[2026-06-12 14:42:22] Client connected FD = 92
+
+[2026-06-12 14:42:22] Client connected FD = 93
+
+[2026-06-12 14:42:22] Client connected FD = 94
+
+[2026-06-12 14:42:22] Client connected FD = 95
+
+[2026-06-12 14:42:22] Client connected FD = 96
+
+[2026-06-12 14:42:22] Client connected FD = 97
+
+[2026-06-12 14:42:22] Client connected FD = 98
+
+[2026-06-12 14:42:22] Client connected FD = 99
+
+[2026-06-12 14:42:22] Client connected FD = 100
+
+[2026-06-12 14:42:22] Client connected FD = 101
+
+[2026-06-12 14:42:22] Client connected FD = 102
+
+[2026-06-12 14:42:22] Client connected FD = 103
+
+[2026-06-12 14:42:22] Client connected FD = 104
+
+[2026-06-12 14:42:22] Client connected FD = 105
+
+[2026-06-12 14:42:22] Client connected FD = 106
+
+[2026-06-12 14:42:22] Client connected FD = 107
+
+[2026-06-12 14:42:22] Client connected FD = 108
+
+[2026-06-12 14:42:22] Client connected FD = 109
+
+[2026-06-12 14:42:22] Client connected FD = 110
+
+[2026-06-12 14:42:22] Client connected FD = 111
+
+[2026-06-12 14:42:22] Client connected FD = 112
+
+[2026-06-12 14:42:22] Client connected FD = 113
+
+[2026-06-12 14:42:22] Client connected FD = 114
+
+[2026-06-12 14:42:22] Client connected FD = 115
+
+[2026-06-12 14:42:22] Client connected FD = 116
+
+[2026-06-12 14:42:22] Client connected FD = 117
+
+[2026-06-12 14:42:22] Client connected FD = 118
+
+[2026-06-12 14:42:22] Client connected FD = 119
+
+[2026-06-12 14:42:22] Client connected FD = 120
+
+[2026-06-12 14:42:22] Client connected FD = 121
+
+[2026-06-12 14:42:22] Client connected FD = 122
+
+[2026-06-12 14:42:22] Client connected FD = 123
+
+[2026-06-12 14:42:22] Client connected FD = 124
+
+[2026-06-12 14:42:22] Client connected FD = 125
+
+[2026-06-12 14:42:22] Client connected FD = 126
+
+[2026-06-12 14:42:22] Client connected FD = 127
+
+[2026-06-12 14:42:22] Client connected FD = 128
+
+[2026-06-12 14:42:22] Client connected FD = 129
+
+[2026-06-12 14:42:22] Client connected FD = 130
+
+[2026-06-12 14:42:22] Client connected FD = 131
+
+[2026-06-12 14:42:22] Client connected FD = 132
+
+[2026-06-12 14:42:22] Client connected FD = 133
+
+[2026-06-12 14:42:22] Client connected FD = 134
+
+[2026-06-12 14:42:22] Client connected FD = 135
+
+[2026-06-12 14:42:22] Client connected FD = 136
+
+[2026-06-12 14:42:22] Client connected FD = 137
+
+[2026-06-12 14:42:22] Client connected FD = 138
+
+[2026-06-12 14:42:22] Client connected FD = 139
+
+[2026-06-12 14:42:22] Client connected FD = 140
+
+[2026-06-12 14:42:22] Client connected FD = 141
+
+[2026-06-12 14:42:22] Client connected FD = 142
+
+[2026-06-12 14:42:22] Client connected FD = 143
+
+[2026-06-12 14:42:22] Client connected FD = 144
+
+[2026-06-12 14:42:22] Client connected FD = 145
+
+[2026-06-12 14:42:22] Client connected FD = 146
+
+[2026-06-12 14:42:22] Client connected FD = 147
+
+[2026-06-12 14:42:22] Client connected FD = 148
+
+[2026-06-12 14:42:22] Client connected FD = 149
+
+[2026-06-12 14:42:22] Client connected FD = 150
+
+[2026-06-12 14:42:22] Client connected FD = 151
+
+[2026-06-12 14:42:22] Client connected FD = 152
+
+[2026-06-12 14:42:22] Client connected FD = 153
+
+[2026-06-12 14:42:22] Client connected FD = 154
+
+[2026-06-12 14:42:22] Client connected FD = 155
+
+[2026-06-12 14:42:22] Client connected FD = 156
+
+[2026-06-12 14:42:22] Client connected FD = 157
+
+[2026-06-12 14:42:22] Client connected FD = 158
+
+[2026-06-12 14:42:22] Client connected FD = 159
+
+[2026-06-12 14:42:22] Client connected FD = 160
+
+[2026-06-12 14:42:22] Client connected FD = 161
+
+[2026-06-12 14:42:22] Client connected FD = 162
+
+[2026-06-12 14:42:22] Client connected FD = 163
+
+[2026-06-12 14:42:22] Client connected FD = 164
+
+[2026-06-12 14:42:22] Client connected FD = 165
+
+[2026-06-12 14:42:22] Client connected FD = 166
+
+[2026-06-12 14:42:22] Client connected FD = 167
+
+[2026-06-12 14:42:22] Client connected FD = 168
+
+[2026-06-12 14:42:22] Client connected FD = 169
+
+[2026-06-12 14:42:22] Client connected FD = 170
+
+[2026-06-12 14:42:22] Client connected FD = 171
+
+[2026-06-12 14:42:22] Client connected FD = 172
+
+[2026-06-12 14:42:22] Client connected FD = 173
+
+[2026-06-12 14:42:22] Client connected FD = 174
+
+[2026-06-12 14:42:22] Client connected FD = 175
+
+[2026-06-12 14:42:22] Client connected FD = 176
+
+[2026-06-12 14:42:22] Client connected FD = 177
+
+[2026-06-12 14:42:22] Client connected FD = 178
+
+[2026-06-12 14:42:22] Client connected FD = 179
+
+[2026-06-12 14:42:22] Client connected FD = 180
+
+[2026-06-12 14:42:22] Client connected FD = 181
+
+[2026-06-12 14:42:22] Client connected FD = 182
+
+[2026-06-12 14:42:22] Client connected FD = 183
+
+[2026-06-12 14:42:22] Client connected FD = 184
+
+[2026-06-12 14:42:22] Client connected FD = 185
+
+[2026-06-12 14:42:22] Client connected FD = 186
+
+[2026-06-12 14:42:22] Client connected FD = 187
+
+[2026-06-12 14:42:22] Client connected FD = 188
+
+[2026-06-12 14:42:22] Client connected FD = 189
+
+[2026-06-12 14:42:22] Client connected FD = 190
+
+[2026-06-12 14:42:22] Client connected FD = 191
+
+[2026-06-12 14:42:22] Client connected FD = 192
+
+[2026-06-12 14:42:22] Client connected FD = 193
+
+[2026-06-12 14:42:22] Client connected FD = 194
+
+[2026-06-12 14:42:22] Client connected FD = 195
+
+[2026-06-12 14:42:22] Client connected FD = 196
+
+[2026-06-12 14:42:22] Client connected FD = 197
+
+[2026-06-12 14:42:22] Client connected FD = 198
+
+[2026-06-12 14:42:22] Client connected FD = 199
+
+[2026-06-12 14:42:22] Client connected FD = 200
+
+[2026-06-12 14:42:22] Client connected FD = 201
+
+[2026-06-12 14:42:22] Client connected FD = 202
+
+[2026-06-12 14:42:22] Client connected FD = 203
+
+[2026-06-12 14:42:22] Client connected FD = 204
+
+[2026-06-12 14:42:24] Server shutting down...
+[2026-06-12 14:42:35] Server socket created succesfully...
+[2026-06-12 14:42:35] Socket binding failed...
+[2026-06-12 14:42:46] Server socket created succesfully...
+[2026-06-12 14:42:46] Socket binding failed...
+[2026-06-12 14:42:58] Server socket created succesfully...
+[2026-06-12 14:42:58] Socket binding failed...
+[2026-06-12 14:43:31] Server socket created succesfully...
+[2026-06-12 14:43:31] Bind succesful...
+[2026-06-12 14:43:31] Listening on port 8080...
+[2026-06-12 14:43:40] Client connected FD = 5
+
+[2026-06-12 14:43:40] Client connected FD = 6
+
+[2026-06-12 14:43:40] Client connected FD = 7
+
+[2026-06-12 14:43:40] Client connected FD = 8
+
+[2026-06-12 14:43:40] Client connected FD = 9
+
+[2026-06-12 14:43:40] Client connected FD = 10
+
+[2026-06-12 14:43:40] Client connected FD = 11
+
+[2026-06-12 14:43:40] Client connected FD = 12
+
+[2026-06-12 14:43:40] Client connected FD = 13
+
+[2026-06-12 14:43:40] Client connected FD = 14
+
+[2026-06-12 14:43:40] Client connected FD = 15
+
+[2026-06-12 14:43:40] Client connected FD = 16
+
+[2026-06-12 14:43:40] Client connected FD = 17
+
+[2026-06-12 14:43:40] Client connected FD = 18
+
+[2026-06-12 14:43:40] Client connected FD = 19
+
+[2026-06-12 14:43:40] Client connected FD = 20
+
+[2026-06-12 14:43:40] Client connected FD = 21
+
+[2026-06-12 14:43:40] Client connected FD = 22
+
+[2026-06-12 14:43:40] Client connected FD = 23
+
+[2026-06-12 14:43:40] Client connected FD = 24
+
+[2026-06-12 14:43:40] Client connected FD = 25
+
+[2026-06-12 14:43:40] Client connected FD = 26
+
+[2026-06-12 14:43:40] Client connected FD = 27
+
+[2026-06-12 14:43:40] Client connected FD = 28
+
+[2026-06-12 14:43:40] Client connected FD = 29
+
+[2026-06-12 14:43:40] Client connected FD = 30
+
+[2026-06-12 14:43:40] Client connected FD = 31
+
+[2026-06-12 14:43:40] Client connected FD = 32
+
+[2026-06-12 14:43:40] Client connected FD = 33
+
+[2026-06-12 14:43:40] Client connected FD = 34
+
+[2026-06-12 14:43:40] Client connected FD = 35
+
+[2026-06-12 14:43:40] Client connected FD = 36
+
+[2026-06-12 14:43:40] Client connected FD = 37
+
+[2026-06-12 14:43:40] Client connected FD = 38
+
+[2026-06-12 14:43:40] Client connected FD = 39
+
+[2026-06-12 14:43:40] Client connected FD = 40
+
+[2026-06-12 14:43:40] Client connected FD = 41
+
+[2026-06-12 14:43:40] Client connected FD = 42
+
+[2026-06-12 14:43:40] Client connected FD = 43
+
+[2026-06-12 14:43:40] Client connected FD = 44
+
+[2026-06-12 14:43:40] Client connected FD = 45
+
+[2026-06-12 14:43:40] Client connected FD = 46
+
+[2026-06-12 14:43:40] Client connected FD = 47
+
+[2026-06-12 14:43:40] Client connected FD = 48
+
+[2026-06-12 14:43:40] Client connected FD = 49
+
+[2026-06-12 14:43:40] Client connected FD = 50
+
+[2026-06-12 14:43:40] Client connected FD = 51
+
+[2026-06-12 14:43:40] Client connected FD = 52
+
+[2026-06-12 14:43:40] Client connected FD = 53
+
+[2026-06-12 14:43:40] Client connected FD = 54
+
+[2026-06-12 14:43:42] Server shutting down...
+[2026-06-12 14:45:06] Server socket created succesfully...
+[2026-06-12 14:45:06] Bind succesful...
+[2026-06-12 14:45:06] Listening on port 8080...
+[2026-06-12 14:45:15] Client connected FD = 5
+
+[2026-06-12 14:45:19] Server shutting down...
+[2026-06-12 14:45:37] Server socket created succesfully...
+[2026-06-12 14:45:37] Socket binding failed...
+[2026-06-12 14:45:59] Server socket created succesfully...
+[2026-06-12 14:45:59] Socket binding failed...
+[2026-06-12 14:46:12] Server socket created succesfully...
+[2026-06-12 14:46:12] Socket binding failed...
+[2026-06-12 14:46:29] Server socket created succesfully...
+[2026-06-12 14:46:29] Socket binding failed...
+[2026-06-12 14:46:33] Server socket created succesfully...
+[2026-06-12 14:46:33] Socket binding failed...
+[2026-06-12 14:46:34] Server socket created succesfully...
+[2026-06-12 14:46:34] Socket binding failed...
+[2026-06-12 14:46:34] Server socket created succesfully...
+[2026-06-12 14:46:34] Socket binding failed...
+[2026-06-12 14:46:35] Server socket created succesfully...
+[2026-06-12 14:46:35] Socket binding failed...
+[2026-06-12 14:46:36] Server socket created succesfully...
+[2026-06-12 14:46:36] Socket binding failed...
+[2026-06-12 14:46:36] Server socket created succesfully...
+[2026-06-12 14:46:36] Socket binding failed...
+[2026-06-12 14:46:37] Server socket created succesfully...
+[2026-06-12 14:46:37] Socket binding failed...
+[2026-06-12 14:46:37] Server socket created succesfully...
+[2026-06-12 14:46:37] Socket binding failed...
+[2026-06-12 14:46:38] Server socket created succesfully...
+[2026-06-12 14:46:38] Socket binding failed...
+[2026-06-12 14:46:39] Server socket created succesfully...
+[2026-06-12 14:46:39] Socket binding failed...
+[2026-06-12 14:46:39] Server socket created succesfully...
+[2026-06-12 14:46:39] Socket binding failed...
+[2026-06-12 14:46:40] Server socket created succesfully...
+[2026-06-12 14:46:40] Socket binding failed...
+[2026-06-12 14:48:13] Server socket created succesfully...
+[2026-06-12 14:48:13] Bind succesful...
+[2026-06-12 14:48:13] Listening on port 8080...
+[2026-06-12 14:48:29] Client connected FD = 5
+
+[2026-06-12 14:48:29] Client connected FD = 6
+
+[2026-06-12 14:48:29] Client connected FD = 7
+
+[2026-06-12 14:48:29] Client connected FD = 8
+
+[2026-06-12 14:48:29] Client connected FD = 9
+
+[2026-06-12 14:48:29] Client connected FD = 10
+
+[2026-06-12 14:48:29] Client connected FD = 11
+
+[2026-06-12 14:48:29] Client connected FD = 12
+
+[2026-06-12 14:48:29] Client connected FD = 13
+
+[2026-06-12 14:48:29] Client connected FD = 14
+
+[2026-06-12 14:48:29] Client connected FD = 15
+
+[2026-06-12 14:48:29] Client connected FD = 16
+
+[2026-06-12 14:48:29] Client connected FD = 17
+
+[2026-06-12 14:48:29] Client connected FD = 18
+
+[2026-06-12 14:48:29] Client connected FD = 19
+
+[2026-06-12 14:48:29] Client connected FD = 20
+
+[2026-06-12 14:48:29] Client connected FD = 21
+
+[2026-06-12 14:48:29] Client connected FD = 22
+
+[2026-06-12 14:48:29] Client connected FD = 23
+
+[2026-06-12 14:48:29] Client connected FD = 24
+
+[2026-06-12 14:48:29] Client connected FD = 25
+
+[2026-06-12 14:48:29] Client connected FD = 26
+
+[2026-06-12 14:48:29] Client connected FD = 27
+
+[2026-06-12 14:48:29] Client connected FD = 28
+
+[2026-06-12 14:48:29] Client connected FD = 29
+
+[2026-06-12 14:48:29] Client connected FD = 30
+
+[2026-06-12 14:48:29] Client connected FD = 31
+
+[2026-06-12 14:48:29] Client connected FD = 32
+
+[2026-06-12 14:48:29] Client connected FD = 33
+
+[2026-06-12 14:48:29] Client connected FD = 34
+
+[2026-06-12 14:48:29] Client connected FD = 35
+
+[2026-06-12 14:48:29] Client connected FD = 36
+
+[2026-06-12 14:48:29] Client connected FD = 37
+
+[2026-06-12 14:48:29] Client connected FD = 38
+
+[2026-06-12 14:48:29] Client connected FD = 39
+
+[2026-06-12 14:48:29] Client connected FD = 40
+
+[2026-06-12 14:48:29] Client connected FD = 41
+
+[2026-06-12 14:48:29] Client connected FD = 42
+
+[2026-06-12 14:48:29] Client connected FD = 43
+
+[2026-06-12 14:48:29] Client connected FD = 44
+
+[2026-06-12 14:48:29] Client connected FD = 45
+
+[2026-06-12 14:48:29] Client connected FD = 46
+
+[2026-06-12 14:48:29] Client connected FD = 47
+
+[2026-06-12 14:48:29] Client connected FD = 48
+
+[2026-06-12 14:48:29] Client connected FD = 49
+
+[2026-06-12 14:48:29] Client connected FD = 50
+
+[2026-06-12 14:48:29] Client connected FD = 51
+
+[2026-06-12 14:48:29] Client connected FD = 52
+
+[2026-06-12 14:48:29] Client connected FD = 53
+
+[2026-06-12 14:48:29] Client connected FD = 54
+
+[2026-06-12 14:48:36] Server shutting down...

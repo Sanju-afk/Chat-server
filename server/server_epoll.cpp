@@ -4,6 +4,9 @@
 #include <netinet/in.h>
 #include <sys/epoll.h>
 #include <cstring>
+#include <csignal> // graceful shutdown
+#include<fcntl.h> // for non blocking epoll
+#include <cerrno>
 
 #include "client_manager.h"
 #include "logger.h"
@@ -14,6 +17,13 @@
 using namespace std;
 
 int server_socket = -1;
+
+//graceful shutdown
+volatile sig_atomic_t running = 1;
+
+void signalHandler(int){
+    running = 0;
+}
 
 int main(){
     //PORT CREATION
@@ -92,13 +102,15 @@ int main(){
     epoll_event events[10]; //stores sockets returned by linux
      
     //event loop
-    while (true){
+    signal(SIGINT, signalHandler);
+    while (running){
         int ready = epoll_wait(
             epoll_fd,
             events,
             10,
-            -1
-        );
+            1000
+        ); //every 1000ms ,wake up check running continue or exit
+
         for (int i = 0; i < ready; i++){
             if (events[i].data.fd == server_socket){
                 //accept the connection
@@ -111,6 +123,18 @@ int main(){
                     logMessage("Accept failed...");
                     continue;
                 }
+                //make client non blocking during recv()
+                int flags = fcntl(
+                            client_socket,
+                            F_GETFL,
+                            0
+                            );
+                //ensures current flags are not overwritten
+                fcntl(
+                    client_socket,
+                    F_SETFL,
+                    flags | O_NONBLOCK
+                );
                 logMessage(("Client connected FD = " + to_string(client_socket)+"\n").c_str());
 
                 //now register the client socket ie make epoll watch it
@@ -183,6 +207,10 @@ int main(){
                     continue;
                 }
                 if (bytes_recieved < 0){
+
+                    //check if empty message (non blocking)
+                    if (errno == EAGAIN || errno == EWOULDBLOCK) continue;
+
                     logMessage("Recieved failed...");
                     //disconnect from epoll then close
                     epoll_ctl(
@@ -212,7 +240,10 @@ int main(){
                 if (!client->username_set){
                     client->username = message;
                     client->username_set = true;
-                    
+                    cout
+                    << "Username set for "
+                    << client->username
+                    << endl;
                     string welcome = "Welcome " + client->username + "\n";
                     send(
                         client_socket,
@@ -243,4 +274,8 @@ int main(){
             }
         }
     }
+    logMessage("Server shutting down...");
+    closeAllClients();
+    printClientCount();
+    close(server_socket);
 }

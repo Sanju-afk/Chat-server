@@ -31,6 +31,14 @@ string viewMetrics(){
     return metrics;            
 }
 
+void closeAllClients(){
+    for(auto& [fd, client] : clients)
+    {
+        close(fd);
+    }
+    clients.clear();
+}
+
 void broadcast(const string& message, const int sender){
     for (auto [socket, client]: clients){
         //broadcast to all users
