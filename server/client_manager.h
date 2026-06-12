@@ -5,15 +5,19 @@
 struct Client{
     int socket;
     std::string username;
+    bool username_set;
 };
-
-void handleClient(int client_socket);
-
-void printClientCount();
-
-void broadcast(const std::string& message, const int sender);
-
-//to manage threads + mutexes
 void addClient(const Client& client);
 
-void removeClient(const int socket);
+void removeClient(int socket);
+
+void broadcast(
+    const std::string& message,
+    int sender_socket
+);
+
+std::string viewMetrics();
+
+Client* findClient(int socket);
+
+void printClientCount();
