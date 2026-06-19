@@ -7,6 +7,7 @@
 #include <csignal> // graceful shutdown
 #include<fcntl.h> // for non blocking epoll
 #include <cerrno>
+#include <vector>
 
 #include "client_manager.h"
 #include "logger.h"
@@ -28,7 +29,7 @@ void signalHandler(int){
 int main(){
     //PORT CREATION
     Config config = loadConfig("config.txt");
-    server_socket = socket(AF_INET, SOCK_STREAM, 0);
+    server_socket = socket(AF_INET, SOCK_STREAM, 0); //uses IPV4 family and TCP handshake
 
     if (server_socket < 0){
         logMessage("Server socket creation failed...");
@@ -36,10 +37,24 @@ int main(){
     }
     logMessage("Server socket created succesfully...");
 
+     //To fix TCP timeout issues
+    int opt = 1;
+    if (
+        setsockopt(
+        server_socket,
+        SOL_SOCKET,
+        SO_REUSEADDR,
+        &opt,
+        sizeof(opt)  //"Without SO_REUSEADDR, restarting the server quickly can fail because the previous TCP endpoint remains in TIME_WAIT.
+    ) < 0 ){
+        perror("setsockopt");
+        return 1;
+    }
+
     //BIND
     sockaddr_in server_address{};
-    server_address.sin_family = AF_INET;
-    server_address.sin_port = htons(config.port);
+    server_address.sin_family = AF_INET; //same as port
+    server_address.sin_port = htons(config.port); //to convert to supported format
     server_address.sin_addr.s_addr = INADDR_ANY;
 
     int bind_result = bind(
@@ -70,6 +85,7 @@ int main(){
 
     //create epoll (epoll watchlist : linux maintains a list of sockets)
     int epoll_fd = epoll_create1(0);
+    
 
     if (epoll_fd < 0){
         logMessage("epoll creation failed...");
@@ -99,17 +115,23 @@ int main(){
     }
 
     //event buffer
-    epoll_event events[10]; //stores sockets returned by linux
+    vector<epoll_event> events(config.max_clients+1); //stores sockets returned by linux
      
     //event loop
     signal(SIGINT, signalHandler);
     while (running){
         int ready = epoll_wait(
             epoll_fd,
-            events,
-            10,
+            events.data(),
+            events.size(),
             1000
         ); //every 1000ms ,wake up check running continue or exit
+
+        if (ready < 0){
+            if (errno == EINTR) continue; // to handle ctrl+C
+            perror("epoll_wait");
+            break;
+        }
 
         for (int i = 0; i < ready; i++){
             if (events[i].data.fd == server_socket){

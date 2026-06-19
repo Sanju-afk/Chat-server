@@ -7,6 +7,5 @@ extern int total_messages;
 extern int total_connections;
 extern int peak_clients;  
 
-
 long getServerUptime();
 

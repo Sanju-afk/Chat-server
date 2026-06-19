@@ -17,7 +17,8 @@ EPOLL_SERVER_SRCS = server/server_epoll.cpp \
 					 server/stats.cpp \
 					 server/config.cpp
 
-CLIENT_SRCS = client/client.cpp
+CLIENT_SRCS = client/client.cpp \
+			  	server/config.cpp
 
 # Output Executables
 #SERVER_TARGET = server_app
