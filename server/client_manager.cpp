@@ -9,6 +9,7 @@
 #include <string>
 
 #include "stats.h"
+#include "../shared/protocol.h"
 #include "client_manager.h"
 #include "logger.h"
 using namespace std;
@@ -39,16 +40,14 @@ void closeAllClients(){
     clients.clear();
 }
 
-void broadcast(const string& message, const int sender){
+void broadcast(PacketType type, const string& message, const int sender){
     for (auto [socket, client]: clients){
         //broadcast to all users
         if (sender == socket) continue;
-        send(
-            socket,
-            message.c_str(),
-            message.length(),
-            0
-        );
+        
+        if (!sendPacket(socket, type, message)){
+            logMessage(("Failed to send packet to client " + to_string(socket)).c_str());
+        }
     }
 }
 

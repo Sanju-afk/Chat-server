@@ -9,6 +9,7 @@
 #include <cerrno>
 #include <vector>
 
+#include "../shared/protocol.h"
 #include "client_manager.h"
 #include "logger.h"
 #include "stats.h"
@@ -134,6 +135,7 @@ int main(){
         }
 
         for (int i = 0; i < ready; i++){
+
             if (events[i].data.fd == server_socket){
                 //accept the connection
                 int client_socket = accept(
@@ -184,16 +186,8 @@ int main(){
 
                 addClient(client);
                 //send prompt for username
-                const char* user_prompt = "Enter username: ";
-
-                int bytes_sent = send(
-                    client_socket,
-                    user_prompt,
-                    strlen(user_prompt),
-                    0
-                );
-                if (bytes_sent < 0){
-                    logMessage("send() failed (user name)...\n");
+                if (!sendPacket(client_socket,PacketType::TEXT,"Enter your username: ")){
+                    logMessage("Failed to send username prompt...");
                     close(client_socket);
                     continue;
                 }
@@ -201,98 +195,157 @@ int main(){
             else {
                 //Client has sent a data (event is not occuring on server socke, so its a client socket)
                 int client_socket = events[i].data.fd;
-                char buffer[1024];
+                Client* client = findClient(client_socket);
+                
+                char recvBuffer[4096];
 
-                int bytes_recieved = recv(
+                int bytes_received = recv(
                     client_socket,
-                    buffer,
-                    sizeof(buffer)-1,
+                    recvBuffer,
+                    sizeof(recvBuffer),
                     0
                 );
+                
+                //client disconnected
+                if (bytes_received == 0){
+                    if (client != nullptr){                        
+                        logMessage(
+                            (client->username + " disconnected...").c_str()
+                        );
 
-                //Client diconnects
-                if (bytes_recieved == 0){
-                    Client* client = findClient(client_socket);
+                        broadcast(PacketType::TEXT,  
+                            "**** " + client->username + " left the chat ****\n",
+                            client_socket
+                            );
+                    }
                     
-                    if (client == nullptr) continue;
-                    logMessage((client->username + " disconnected...").c_str());
-                    broadcast(("****" + client->username + " left the chat ****\n").c_str(), client->socket);
-                    //disconnect from epoll then close
                     epoll_ctl(
                         epoll_fd,
                         EPOLL_CTL_DEL,
                         client_socket,
                         nullptr
                     );
+
                     removeClient(client_socket);
                     close(client_socket);
                     continue;
                 }
-                if (bytes_recieved < 0){
+                //receiving failed
+                else if (bytes_received < 0){
+                    if (errno == EAGAIN || errno == EWOULDBLOCK){
+                        //no more data for now
+                        continue;
+                    }
 
-                    //check if empty message (non blocking)
-                    if (errno == EAGAIN || errno == EWOULDBLOCK) continue;
+                    //actual socket error
+                    perror("recv");
 
-                    logMessage("Recieved failed...");
-                    //disconnect from epoll then close
+                    if (client != nullptr){
+                        logMessage(
+                            ("Socket error from " + client->username + "...").c_str()
+                        );
+                    }
+
                     epoll_ctl(
                         epoll_fd,
                         EPOLL_CTL_DEL,
                         client_socket,
                         nullptr
                     );
+
                     removeClient(client_socket);
                     close(client_socket);
                     continue;
                 }
-        
-                Client* client = findClient(client_socket);
+                
                 if(client == nullptr)
                 {
                     logMessage("Empty client found...");
                     continue;
                 }
-                buffer[bytes_recieved] = '\0';
-                string message = buffer;
                 
-                while (!message.empty() && (message.back() == '\n' || message.back() == '\r')){
-                    message.pop_back();
+                //feed the parser
+                client->decoder.feed(
+                    recvBuffer,
+                    bytes_received
+                ); 
+                
+                //process all packets
+                while (client->decoder.hasPacket()){
+                    Packet packet = client->decoder.nextpacket();
+
+                    switch (packet.header.type){
+
+                        case PacketType::USERNAME:
+                        {
+                            client->username = packet.payload;
+                            client->username_set = true;
+
+                            cout << "Username set for " << client->username << endl;
+
+                            sendPacket(client_socket, PacketType::TEXT, "Welcome " + client->username + "\n");
+
+                            string join_message =
+                                        "*** " +
+                                        client->username +
+                                        " joined the chat ***\n";
+
+                            broadcast(
+                                PacketType::TEXT,
+                                join_message,
+                                client_socket
+                            );
+
+                            break;
+                        }
+                        case PacketType::TEXT:
+                        {
+                            string formatted_message = 
+                             "[" +
+                            client->username +
+                            "]: " +
+                            packet.payload +
+                            "\n";
+
+
+                            broadcast(
+                                PacketType::TEXT,
+                                formatted_message,
+                                client_socket
+                            );
+                            total_messages++;
+                            break;
+                        }
+                        case PacketType::STATS_REQUEST:
+                        {
+                            string metrics = viewMetrics();
+
+                            sendPacket(
+                                client_socket,
+                                PacketType::STATS_RESPONSE,
+                                metrics
+                            );
+                            break;
+                        }
+                        case PacketType::STATS_RESPONSE:
+                        {
+                            break;
+                        }
+                        case PacketType::FILE:
+                        {
+                            break;
+                        }
+                        case PacketType::IMAGE:
+                        {
+                            break;
+                        }
+                        case PacketType::PRIVATE:
+                        {
+                            break;
+                        }
+                    }
                 }
-                //set username
-                if (!client->username_set){
-                    client->username = message;
-                    client->username_set = true;
-                    cout
-                    << "Username set for "
-                    << client->username
-                    << endl;
-                    string welcome = "Welcome " + client->username + "\n";
-                    send(
-                        client_socket,
-                        welcome.c_str(),
-                        welcome.size(),
-                        0
-                    );
-                    //join notification
-                    string join_messaage = "*** " + client->username + " joined the chat ***\n";
-                    broadcast(join_messaage, client_socket); 
-                    continue;
-                }
-                //handle statistics dashboard
-                if (message == "/stats"){
-                    string metrics = viewMetrics();
-                    send(
-                        client->socket,
-                        metrics.c_str(),
-                        metrics.length(),
-                        0
-                    );
-                }
-                //broadcast normal message
-                else{
-                    broadcast("[" + client->username + "]: " + message + "\n", client_socket);
-                    total_messages++;
-                }
+                
             }
         }
     }

@@ -5,8 +5,11 @@
 #include <unistd.h>
 #include <arpa/inet.h>
 #include <atomic>
+#include <signal.h>
 #include <sys/socket.h>
 #include "../server/config.h"
+#include "../shared/protocol.h"
+
 using namespace std;
 
 atomic<bool> running(true);
@@ -16,73 +19,63 @@ Send messages
 Receive messages
 */
 
-//reciever thread
-// void receiveMessages(int sock){
-//     char buffer[1024];
-//     while (true){
-//         int bytes = recv(
-//             sock,
-//             buffer,
-//             sizeof(buffer) - 1,
-//             0
-//         );
-        
-//         if (bytes <= 0){
-//             cout << "Disconnected from server\n";
-//             break;
-//         }
-//         buffer[bytes] = '\0';
-//         cout << buffer;
-//         cout.flush();
-//     }
-// }
+void receiveMessages(int sock){
+    cout << "[Receiver started]" << endl;
 
-void receiveMessages(int sock)
-{
-    cout << "[Receiver started]\n";
+    while (running){
+        PacketHeader header;
+        string payload;
 
-    char buffer[1024];
-
-    while (running)
-    {
-        int bytes = recv(
-            sock,
-            buffer,
-            sizeof(buffer)-1,
-            0
-        );
-
-        cout << "[recv returned " << bytes << "]\n";
-
-        if (bytes <= 0)
-        {
+        if (!recvPacket(sock, header, payload)){
             cout << "Disconnected from server\n";
             break;
         }
 
-        buffer[bytes] = '\0';
-        cout << buffer;
+        switch(header.type){
+            case PacketType :: TEXT:
+            {
+                cout << payload;
+                break;
+            }
+            case PacketType :: STATS_RESPONSE:
+            {
+                cout << payload;
+                break;
+            }
+            default:
+            {
+                cout << "Unknown packet type received\n";
+                break;
+            }
+        }
     }
-
-    cout << "[Receiver exiting]\n";
+    cout << "[Reciever exiting]...\n";
 }
 
-//sender thread
 void sendMessages(int sock){
     string message;
-    while (getline(cin, message)){
+
+    while (running && getline(cin, message)){
         if (message == "/quit"){
             running = false;
-            shutdown(sock, SHUT_RDWR);
-            close(sock);
+            shutdown(sock , SHUT_RDWR);
             break;
         }
-        send(
-            sock,
-            message.c_str(),
-            message.size(),
-            0
-        );
+
+        PacketType type = PacketType::TEXT;
+        string payload = message;
+        
+        if (message == "/stats"){
+            type = PacketType :: STATS_REQUEST;
+            payload.clear();
+        }
+
+        if (!sendPacket(sock, type, payload)){
+            cerr << "Failed to send packet\n";
+            shutdown(sock, SHUT_RDWR);
+            running = false;
+            break;
+        }
     }
 }
 
@@ -118,31 +111,25 @@ int main(){
     cout << "Connected to server\n";
 
     //recieve username prompt from server
-    char buffer[1024];
-    int bytes = recv(
-        sock,
-        buffer,
-        sizeof(buffer) - 1,
-        0
-    );
-    if (bytes <= 0){
-        cerr << "Recieve failed\n";
+    PacketHeader header;
+    string payload;
+
+    if (!recvPacket(sock, header, payload)){
+        cerr << "Failed to recieve username prompt\n";
         close(sock);
         return 3;
     }
-    buffer[bytes] = '\0';
-    cout << buffer;
+    cout << payload;
 
     //Send username
     string username;
     getline(cin, username);
 
-    send(
-        sock,
-        username.c_str(),
-        username.size(),
-        0
-    );
+    if (!sendPacket(sock, PacketType::USERNAME, username)){
+        cerr << "Failed to send message \n";
+        running = false;
+        shutdown(sock, SHUT_RDWR);
+    }
 
     //start chat threads
     thread recieverThread(receiveMessages,sock);

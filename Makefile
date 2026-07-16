@@ -15,12 +15,17 @@ EPOLL_SERVER_SRCS = server/server_epoll.cpp \
 					 server/client_manager.cpp \
 					 server/logger.cpp \
 					 server/stats.cpp \
-					 server/config.cpp
+					 server/config.cpp \
+					 shared/protocol.cpp \
+					 shared/packet_decoder.cpp
 
 CLIENT_SRCS = client/client.cpp \
-			  	server/config.cpp
+			  	server/config.cpp \
+				shared/protocol.cpp \
+				shared/packet_decoder.cpp
 
-# Output Executables
+
+# Output Executables	
 #SERVER_TARGET = server_app
 EPOLL_SERVER_TARGET = server_app
 CLIENT_TARGET = client_app

@@ -1,19 +1,23 @@
 #pragma once
 
 #include <string>
+#include "../shared/packet_decoder.h"
+
 
 struct Client{
     int socket;
     std::string username;
     bool username_set;
+    PacketDecoder decoder;
 };
 void addClient(const Client& client);
 
 void removeClient(int socket);
 
 void broadcast(
-    const std::string& message,
-    int sender_socket
+    PacketType type,
+    const string& message,
+    int sender = - 1
 );
 
 std::string viewMetrics();
