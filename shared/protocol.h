@@ -8,6 +8,8 @@ using namespace std;
 enum class PacketType : uint32_t
 {
     USERNAME = 1,
+    USERNAME_ACCEPTED,
+    USERNAME_REJECTED,
     TEXT,
     STATS_REQUEST,
     STATS_RESPONSE,

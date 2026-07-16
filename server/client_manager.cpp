@@ -77,7 +77,22 @@ void removeClient(const int socket){
     printClientCount();
 }
 
+Client* findClientByUsername(const string& username){
+    for (auto& [socket, client] : clients){
+        if (client.username == username){
+            return &client;
+        }
+    }
+    return nullptr;
+}
 
 
-
+bool usernameExists(const string& username){
+    for (const auto& [socket, client] : clients){
+        if (client.username == username){
+            return true;
+        }
+    }
+    return false;
+}
 

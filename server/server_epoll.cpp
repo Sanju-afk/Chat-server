@@ -185,12 +185,6 @@ int main(){
                 client.username_set = false;
 
                 addClient(client);
-                //send prompt for username
-                if (!sendPacket(client_socket,PacketType::TEXT,"Enter your username: ")){
-                    logMessage("Failed to send username prompt...");
-                    close(client_socket);
-                    continue;
-                }
             }
             else {
                 //Client has sent a data (event is not occuring on server socke, so its a client socket)
@@ -278,12 +272,31 @@ int main(){
 
                         case PacketType::USERNAME:
                         {
+                            if (usernameExists(packet.payload)){
+                                sendPacket(
+                                    client_socket,
+                                    PacketType::USERNAME_REJECTED,
+                                    "Username already taken. Please choose another.\n"
+                                );
+                                client->username_set = false;
+                                break;
+                            }
                             client->username = packet.payload;
                             client->username_set = true;
 
                             cout << "Username set for " << client->username << endl;
 
-                            sendPacket(client_socket, PacketType::TEXT, "Welcome " + client->username + "\n");
+                            sendPacket(
+                                client_socket, 
+                                PacketType::USERNAME_ACCEPTED, 
+                                ""
+                            );
+
+                            sendPacket(
+                                client_socket,
+                                PacketType::TEXT,
+                                "Welcome " + client->username + "\n"
+                            );
 
                             string join_message =
                                         "*** " +
@@ -341,6 +354,50 @@ int main(){
                         }
                         case PacketType::PRIVATE:
                         {
+                            size_t space = packet.payload.find(' ');
+                            if (space == string::npos){
+                                sendPacket(
+                                    client_socket,
+                                    PacketType::TEXT,
+                                    "Invalid message format\n"
+                                );
+                                break;
+                            }
+                            
+                            string targetUsername = packet.payload.substr(0, space); //first space is separation of username and message
+                            string privateMessage = packet.payload.substr(space + 1);
+
+                            Client *target = findClientByUsername(targetUsername);
+
+                            if (target == nullptr){
+                                sendPacket(
+                                    client_socket,
+                                    PacketType::TEXT,
+                                    "User not found\n"
+                                );
+                                break;
+                            }
+                            //send to reciever else
+                            sendPacket(
+                                target->socket,
+                                PacketType::TEXT,
+                                "[PM from " +
+                                client->username +
+                                "]: " +
+                                privateMessage +
+                                "\n"
+                            );
+
+                            //confirmation to sender
+                            sendPacket(
+                                client_socket,
+                                PacketType::TEXT,
+                                "[PM to " +
+                                targetUsername +
+                                "]: " +
+                                privateMessage +
+                                "\n"
+                            );
                             break;
                         }
                     }

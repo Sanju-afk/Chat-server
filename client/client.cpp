@@ -65,9 +65,22 @@ void sendMessages(int sock){
         PacketType type = PacketType::TEXT;
         string payload = message;
         
+        //stats command
         if (message == "/stats"){
             type = PacketType :: STATS_REQUEST;
             payload.clear();
+        }
+
+        //private messaging command
+        else if (message.rfind("/msg", 0) == 0){
+            type = PacketType::PRIVATE;
+            //remove /msg
+            payload = message.substr(5);
+
+            if (payload.find(' ') == string::npos){
+                cerr << "Usage: /msg <username> <message>\n";
+                continue;
+            }
         }
 
         if (!sendPacket(sock, type, payload)){
@@ -110,25 +123,40 @@ int main(){
     }
     cout << "Connected to server\n";
 
-    //recieve username prompt from server
+    //recieve username prompt from server (loop based)
     PacketHeader header;
     string payload;
 
-    if (!recvPacket(sock, header, payload)){
-        cerr << "Failed to recieve username prompt\n";
-        close(sock);
-        return 3;
-    }
-    cout << payload;
+    while (true){
+        cout << "Enter username : ";
+        string username;
+        getline(cin, username);
 
-    //Send username
-    string username;
-    getline(cin, username);
+        if (!sendPacket(
+            sock,
+            PacketType::USERNAME,
+            username
+        )){
+            cerr << "Failed to send username\n";
+            close(sock);
+            return 1;
+        }
+        if (!recvPacket(
+            sock,
+            header,
+            payload
+        )){
+            cerr << "Server disonnceted\n";
+            close(sock);
+            return 1;
+        }
 
-    if (!sendPacket(sock, PacketType::USERNAME, username)){
-        cerr << "Failed to send message \n";
-        running = false;
-        shutdown(sock, SHUT_RDWR);
+        if (header.type == PacketType::USERNAME_ACCEPTED){
+            break;
+        }
+        if (header.type == PacketType::USERNAME_REJECTED){
+            cout << payload << '\n';
+        }
     }
 
     //start chat threads

@@ -25,7 +25,7 @@ bool recvAll(int sock, void* data, size_t length){
 
     size_t total_recv = 0;
 
-    while (total_recv < length){
+    while (total_recv < length){    
         ssize_t bytes = recv(sock,buffer + total_recv, length - total_recv, 0);
         if (bytes <= 0){
             return false;

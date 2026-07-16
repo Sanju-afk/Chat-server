@@ -27,3 +27,7 @@ Client* findClient(int socket);
 void closeAllClients();
 
 void printClientCount();
+
+Client* findClientByUsername(const string& username);
+
+bool usernameExists(const string& username);
