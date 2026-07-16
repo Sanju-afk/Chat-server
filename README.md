@@ -1,301 +1,318 @@
-# Multi-Client TCP Chat Server (C++)
-
-## Overview
-
-A Linux-based multi-client chat server built in C++ using POSIX sockets. The project supports multiple concurrent clients, real-time message broadcasting, username registration, connection logging, runtime statistics, configuration-driven startup, graceful shutdown handling, and an epoll-based event-driven architecture.
-
-The project was developed to gain hands-on experience with Linux system programming, TCP/IP networking, concurrency, synchronization, and scalable server design.
-
 ---
 
-## Features
-
-### Networking
-
-* TCP-based client-server communication
-* Multiple concurrent client connections
-* Username registration on connection
-* Real-time message broadcasting
-* Join and leave notifications
-* Interactive terminal client
-
-### Server Management
-
-* Graceful shutdown using SIGINT (Ctrl+C)
-* Configuration-driven startup
-* Runtime statistics tracking
-* Connection management subsystem
-* Centralized logging
-
-### Architectures Implemented
-
-#### Thread-per-Client Server
-
-* Dedicated thread for each connected client
-* Mutex-protected shared resources
-* Simple concurrency model
-
-#### Epoll-Based Server
-
-* Event-driven architecture using Linux epoll
-* Efficient handling of multiple connections
-* Scalable readiness-based I/O processing
-* Dynamic epoll event buffer sizing based on configuration
-
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
-## Architecture
+# Multi-Client TCP Chat Server
 
-```text
-+------------------+
-|   Client A       |
-+------------------+
-          |
-          |
-+------------------+
-|   Client B       |
-+------------------+
-          |
-          |
-          v
-+--------------------------+
-|      TCP Server          |
-+--------------------------+
-            |
-            |
-    +---------------+
-    |   epoll_wait  |
-    +---------------+
-            |
-            |
-    +---------------+
-    | ClientManager |
-    +---------------+
-            |
-     +------+------+
-     |             |
-     v             v
- Broadcast      Statistics
-     |
-     v
- Connected Clients
+> **A high-performance event-driven TCP server framework built in C++ using Linux POSIX sockets, non-blocking I/O, epoll, and a custom binary protocol.**
+
+This project is a systems programming exercise focused on designing a scalable networking architecture rather than simply implementing a chat application. The chat functionality serves as a demonstration of an extensible protocol capable of supporting additional packet types and services.
+
+------------------------------------------------------------------------
+
+## Highlights
+
+- Event-driven server using **epoll**
+- Non-blocking sockets
+- Custom binary application protocol
+- Incremental **PacketDecoder** for TCP stream reconstruction
+- Username handshake with duplicate detection
+- Public chat
+- Private messaging (`/msg`)
+- Runtime statistics (`/stats`)
+- Graceful shutdown
+- Modular architecture
+- Thread-safe client management
+
+------------------------------------------------------------------------
+
+# Architecture
+
+``` text
+                        Clients
+          +---------------+---------------+
+          |               |               |
+          ▼               ▼               ▼
+      TCP Socket      TCP Socket      TCP Socket
+              \           |           /
+               +----------+----------+
+                          │
+                 Linux Socket API
+                          │
+                     epoll_wait()
+                          │
+                   Ready Socket (EPOLLIN)
+                          │
+                       recv() bytes
+                          │
+            PacketDecoder (per connected client)
+                          │
+               Queue of complete Packet objects
+                          │
+                  Packet Dispatcher (switch)
+                          │
+      +-----------+-----------+-----------+
+      |           |           |           |
+ Username      TEXT       PRIVATE      STATS
+ Handler      Handler      Handler     Handler
+                          │
+                    ClientManager
+                          │
+                     sendPacket()
+                          │
+                       Connected Clients
 ```
 
----
+------------------------------------------------------------------------
 
-## Project Structure
+# Repository Structure
 
-```text
+``` text
 .
 ├── client/
 │   ├── client.cpp
 │   └── client.h
-│
 ├── server/
-│   ├── server.cpp
 │   ├── server_epoll.cpp
-│   ├── client_manager.cpp
-│   ├── client_manager.h
-│   ├── logger.cpp
-│   ├── logger.h
-│   ├── stats.cpp
-│   ├── stats.h
-│   ├── config.cpp
-│   └── config.h
-│
+│   ├── client_manager.*
+│   ├── logger.*
+│   ├── stats.*
+│   └── config.*
+├── shared/
+│   ├── protocol.*
+│   ├── packet_decoder.*
+│   └── protocol.h
 ├── config.txt
-├── logs/
 ├── Makefile
 └── README.md
 ```
 
----
+------------------------------------------------------------------------
 
-## Technologies Used
+# Features
 
-* C++
-* POSIX Sockets
-* TCP/IP
-* Linux System Programming
-* Threads (std::thread)
-* Mutexes (std::mutex)
-* Atomics (std::atomic)
-* epoll
-* File I/O
-* Signal Handling
+| Feature                      | Status |
+|:-----------------------------|:-------|
+| Multi-client support         | ✅     |
+| epoll-based event loop       | ✅     |
+| Non-blocking sockets         | ✅     |
+| Binary protocol              | ✅     |
+| Packet decoder               | ✅     |
+| Username handshake           | ✅     |
+| Duplicate username detection | ✅     |
+| Public messaging             | ✅     |
+| Private messaging            | ✅     |
+| Runtime statistics           | ✅     |
+| Graceful shutdown            | ✅     |
 
----
+------------------------------------------------------------------------
 
-## Build
+# Protocol
 
-Compile the project using:
+Every message is transmitted using a fixed header followed by a variable-length payload.
 
-```bash
+``` text
++--------------------------------+
+|          PacketHeader          |
++--------------------------------+
+| PacketType                     |
+| Payload Size (bytes)           |
++--------------------------------+
+| Payload                        |
++--------------------------------+
+```
+
+## Packet Types
+
+| Type              | Purpose                       |
+|:------------------|:------------------------------|
+| USERNAME          | Initial username registration |
+| USERNAME_ACCEPTED | Username accepted             |
+| USERNAME_REJECTED | Username rejected             |
+| TEXT              | Public message                |
+| PRIVATE           | Private message               |
+| STATS_REQUEST     | Request server metrics        |
+| STATS_RESPONSE    | Server metrics                |
+
+------------------------------------------------------------------------
+
+# Packet Decoder
+
+TCP is **stream-oriented**, not **message-oriented**.
+
+A single `recv()` call may contain:
+
+- Half a packet
+- One complete packet
+- Multiple packets
+- Half of one packet + half of another
+
+The decoder incrementally reconstructs packets.
+
+``` text
+recv()
+   │
+Append bytes
+   │
+Internal Buffer
+   │
+Enough bytes for header?
+   │
+No ───────────────┐
+                  │
+                 Wait
+                  │
+Yes
+   │
+Enough bytes for payload?
+   │
+No ───────────────┐
+                  │
+                 Wait
+                  │
+Yes
+   │
+Extract Packet
+   │
+Push into Queue
+   │
+Continue parsing remaining bytes
+```
+
+This architecture correctly handles: - Fragmentation - Sticky packets - Partial headers - Partial payloads - Multiple packets per receive
+
+------------------------------------------------------------------------
+
+# Build
+
+``` bash
 make
 ```
 
----
+Produces:
 
-## Run
+``` text
+server_app
+client_app
+```
 
-### Start the Server
+------------------------------------------------------------------------
 
-```bash
+# Run
+
+Server:
+
+``` bash
 ./server_app
 ```
 
-### Start a Client
+Clients (multiple terminals):
 
-```bash
+``` bash
 ./client_app
 ```
 
-Open multiple terminal windows and launch multiple clients to test chat functionality.
+------------------------------------------------------------------------
 
----
+# Available Commands
 
-## Example Session
+| Command                   | Description           |
+|:--------------------------|:----------------------|
+| message                   | Broadcast to everyone |
+| /msg <username> <message> | Private message       |
+| /stats                    | Runtime statistics    |
+| /quit                     | Disconnect            |
 
-### Client 1
+------------------------------------------------------------------------
 
-```text
-$ ./client_app
+# Major Design Decisions
 
-Enter username: Alice
-Hello everyone!
-```
+### epoll over thread-per-client
 
-### Client 2
+- Lower memory usage
+- Fewer context switches
+- Better scalability
+- Event-driven architecture
 
-```text
-$ ./client_app
+### Binary Protocol
 
-Enter username: Bob
+- Efficient serialization
+- Explicit packet boundaries
+- Extensible PacketType enum
 
-*** Alice joined the chat ***
-[Alice]: Hello everyone!
-```
+### PacketDecoder
 
----
+- Handles arbitrary TCP byte streams
+- Decouples networking from business logic
+- Supports protocol evolution
 
-## Available Commands
+### Per-client Decoder
 
-### Client Commands
+Each TCP connection owns an independent parser state.
 
-```text
-/quit
-```
+### Modular Design
 
-Disconnect from the server and close the client.
+Networking, protocol, logging, metrics, and client management remain independent modules.
 
-### Server Commands
+------------------------------------------------------------------------
 
-```text
-/stats
-```
+# Current Limitations
 
-Display:
+- No endianness conversion (`htonl()` / `ntohl()`)
+- Direct `memcpy()` serialization of `PacketHeader`
+- Username lookup is O(n)
+- `std::vector::erase()` in PacketDecoder is O(n)
+- No authentication
+- No TLS
+- No protocol versioning
+- No asynchronous send queue (`EPOLLOUT`)
+- No persistence
 
-* Active clients
-* Total connections
-* Total messages
-* Server uptime
+------------------------------------------------------------------------
 
----
+# Future Roadmap
 
-## Configuration
+- Authentication
+- Chat rooms
+- File transfer
+- Image transfer
+- TLS encryption
+- Heartbeats (PING/PONG)
+- Ring-buffer decoder
+- Protocol versioning
+- Checksums
+- Async output queue
+- Benchmark suite
+- Metrics dashboard
 
-The server reads startup parameters from:
+------------------------------------------------------------------------
 
-```text
-config.txt
-```
+# Lessons Learned
 
-Example:
+The biggest architectural lesson from this project was understanding that **TCP is a byte stream, not a message protocol**.
 
-```text
-PORT=8080
-MAX_CLIENTS=100
-LOG_FILE=logs/server.log
-```
+The initial implementation assumed one `recv()` corresponded to one complete packet. This worked with blocking sockets but failed after migrating to an event-driven, non-blocking `epoll` architecture.
 
-This allows runtime customization without recompiling.
+Redesigning the receive path around an incremental **PacketDecoder** separated transport, protocol parsing, and application logic, resulting in a cleaner and more scalable architecture.
 
----
+------------------------------------------------------------------------
 
-## Logging
+# Technologies
 
-The server maintains connection and activity logs including:
+- C++17
+- Linux
+- POSIX Sockets
+- epoll
+- Non-blocking I/O
+- std::thread (client)
+- STL (`unordered_map`, `vector`, `queue`, `mutex`)
+- Make
 
-* Client connections
-* Client disconnections
-* Join notifications
-* Server startup
-* Server shutdown
-* Important runtime events
+------------------------------------------------------------------------
 
-Logs are written to the file specified in the configuration.
+# License
 
----
-
-## Statistics Tracking
-
-The server tracks:
-
-* Active connected clients
-* Total client connections
-* Total messages exchanged
-* Server uptime
-
-Statistics can be queried during runtime.
-
----
-
-## Reliability Improvements
-
-Several networking and system-level improvements were implemented:
-
-* SO_REUSEADDR for immediate server restart after shutdown
-* Graceful shutdown using signal handling
-* Atomic counters for thread-safe statistics
-* Mutex-protected client management
-* Dynamic epoll event buffers
-* Client-side coordinated shutdown using atomic state and socket shutdown
-
----
-
-## Key Learnings
-
-Through this project I gained practical experience with:
-
-* TCP socket programming
-* Linux networking APIs
-* Concurrent programming
-* Event-driven architectures
-* epoll-based I/O multiplexing
-* Thread synchronization
-* Signal handling
-* Client-server system design
-* Resource management and cleanup
-* Scalable server development
-
----
-
-## Future Improvements
-
-* Thread pool implementation
-* Unit testing
-* Prometheus metrics integration
-* Grafana dashboard
-* Private messaging
-* Chat rooms
-* Authentication support
-* TLS/SSL encryption
-* Benchmarking thread-per-client vs epoll implementations
-
----
-
-## License
-
-This project was built for learning purposes and portfolio demonstration.
-
+This project is intended for educational purposes and demonstrates Linux systems programming, scalable network server design, and custom protocol implementation.
